@@ -1,0 +1,60 @@
+[
+  {
+    "id": "louislam-dockge",
+    "owner": "louislam",
+    "repository": "dockge",
+    "name": "Dockge",
+    "description": "A reactive, self-hosted Docker Compose stack manager.",
+    "url": "https://github.com/louislam/dockge",
+    "homepage": "",
+    "language": "TypeScript",
+    "license": "MIT",
+    "topics": [
+      "docker",
+      "compose",
+      "self-hosted"
+    ],
+    "stars": null,
+    "forks": null,
+    "lastUpdated": "",
+    "status": "Following",
+    "categories": [
+      "Self-hosting",
+      "Docker"
+    ],
+    "personalTags": [
+      "home-server",
+      "portainer-alternative"
+    ],
+    "notes": "Example entry. Edit or delete it while running the site locally.",
+    "reasonForFollowing": "Potentially simpler than Portainer for Compose-based services.",
+    "possibleUse": "Managing containers on the home server.",
+    "favourite": true,
+    "dateAdded": "2026-08-04",
+    "dateReviewed": ""
+  },
+  {
+    "owner": "conaticus",
+    "repository": "FileExplorer",
+    "name": "FileExplorer",
+    "description": "Fast file explorer written with Tauri and React.",
+    "url": "https://github.com/conaticus/FileExplorer",
+    "homepage": "",
+    "language": "Rust",
+    "license": "GPL-3.0",
+    "topics": [],
+    "stars": 1724,
+    "forks": 125,
+    "lastUpdated": "2026-08-04T12:56:29Z",
+    "status": "Following",
+    "categories": [],
+    "personalTags": [],
+    "notes": "",
+    "reasonForFollowing": "",
+    "possibleUse": "",
+    "favourite": false,
+    "dateReviewed": "2026-08-04",
+    "id": "conaticus-fileexplorer",
+    "dateAdded": "2026-08-04"
+  }
+]

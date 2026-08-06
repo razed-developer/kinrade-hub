@@ -1,0 +1,50 @@
+[
+  {
+    "id": "obsidian",
+    "name": "Obsidian",
+    "description": "Markdown-based notes and personal knowledge management.",
+    "url": "https://obsidian.md/",
+    "type": "Desktop App",
+    "status": "Using",
+    "categories": ["Writing", "Notes"],
+    "tags": ["markdown", "knowledge-base", "plugins"],
+    "platforms": ["Windows", "Linux", "Android"],
+    "pricing": "Freemium",
+    "notes": "Primary application for project notes and planning.",
+    "favourite": true,
+    "dateAdded": "2026-07-31",
+    "dateUpdated": "2026-07-31"
+  },
+  {
+    "id": "excalidraw",
+    "name": "Excalidraw",
+    "description": "A simple hand-drawn-style diagramming and whiteboard tool.",
+    "url": "https://excalidraw.com/",
+    "type": "Website",
+    "status": "Using",
+    "categories": ["Design", "Planning"],
+    "tags": ["diagrams", "whiteboard"],
+    "platforms": ["Web"],
+    "pricing": "Free",
+    "notes": "Useful for system diagrams and visual planning.",
+    "favourite": true,
+    "dateAdded": "2026-07-31",
+    "dateUpdated": "2026-07-31"
+  },
+  {
+    "id": "grist",
+    "name": "Grist",
+    "description": "A spreadsheet-database hybrid for structured information.",
+    "url": "https://www.getgrist.com/",
+    "type": "Service",
+    "status": "Testing",
+    "categories": ["Productivity", "Data"],
+    "tags": ["database", "spreadsheet", "self-hosted"],
+    "platforms": ["Web"],
+    "pricing": "Freemium",
+    "notes": "Potential option for trackers and structured project records.",
+    "favourite": false,
+    "dateAdded": "2026-07-31",
+    "dateUpdated": "2026-07-31"
+  }
+]

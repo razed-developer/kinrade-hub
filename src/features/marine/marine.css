@@ -1,0 +1,53 @@
+.marine-page { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #102a43; background: #eef6f8; font-synthesis: none; }
+.marine-page * { box-sizing: border-box; }
+.marine-page { margin: 0; min-width: 320px; }
+.marine-page button, .marine-page select { font: inherit; }
+.marine-page { width: min(1180px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 48px; }
+.marine-page .hero { display: flex; justify-content: space-between; align-items: end; gap: 30px; padding: 30px; background: #082f49; color: white; border: 1px solid #082f49; }
+.marine-page .hero h1 { margin: 3px 0 8px; font-size: clamp(2rem, 7vw, 4.4rem); line-height: .95; }
+.marine-page .hero p { max-width: 680px; margin-bottom: 0; }
+.marine-page .eyebrow { margin: 0; text-transform: uppercase; letter-spacing: .12em; font-size: .74rem; font-weight: 800; color: #0e7490; }
+.marine-page .hero .eyebrow { color: #67e8f9; }
+.marine-page .controls { min-width: 230px; display: grid; gap: 7px; }
+.marine-page .controls label { font-size: .85rem; font-weight: 700; }
+.marine-page .controls select, .marine-page .controls button { width: 100%; border: 1px solid #cbd5e1; padding: 11px 12px; border-radius: 0; }
+.marine-page .controls button { cursor: pointer; border-color: #22d3ee; background: #22d3ee; color: #083344; font-weight: 800; }
+.marine-page .controls button:disabled { opacity: .65; cursor: wait; }
+.marine-page .notice, .marine-page .error, .marine-page .loading { margin: 18px 0; padding: 14px 16px; border-left: 5px solid #0e7490; background: white; }
+.marine-page .error { border-color: #b91c1c; background: #fff7f7; }
+.marine-page section { margin: 22px 0; padding: 24px; background: white; border: 1px solid #cbd5e1; }
+.marine-page .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; border-bottom: 1px solid #dbe7eb; padding-bottom: 14px; margin-bottom: 18px; }
+.marine-page h2 { margin: 3px 0 0; font-size: 2rem; }
+.marine-page h3 { margin: 24px 0 12px; }
+.marine-page .updated { color: #526d82; font-size: .9rem; }
+.marine-page .current-grid { display: grid; grid-template-columns: 1.7fr 1fr 1fr; gap: 12px; }
+.marine-page .current-card, .marine-page .metric { border: 1px solid #bfd0d9; padding: 20px; min-height: 140px; }
+.marine-page .current-card { display: flex; align-items: center; gap: 18px; background: #ecfeff; }
+.marine-page .weather-big-icon { font-size: 4rem; }
+.marine-page .current-card strong { font-size: 3rem; }
+.marine-page .current-card p { margin: 2px 0; font-weight: 700; }
+.marine-page .metric { display: flex; flex-direction: column; justify-content: center; }
+.marine-page .metric span { color: #526d82; }
+.marine-page .metric strong { font-size: 1.35rem; margin: 7px 0; }
+.marine-page .hourly-strip { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(112px, 1fr); overflow-x: auto; border: 1px solid #cbd5e1; }
+.marine-page .hour { min-height: 158px; padding: 12px; display: flex; flex-direction: column; gap: 7px; border-right: 1px solid #dbe7eb; }
+.marine-page .hour span { font-size: 1.7rem; }
+.marine-page .hour small, .marine-page .day small, .marine-page .metric small { color: #526d82; }
+.marine-page .daily-grid { display: grid; grid-template-columns: repeat(7, 1fr); border: 1px solid #cbd5e1; }
+.marine-page .day { padding: 13px; min-height: 150px; display: flex; flex-direction: column; gap: 8px; border-right: 1px solid #dbe7eb; }
+.marine-page .chart-wrap { width: 100%; overflow: hidden; }
+.marine-page .tide-chart { width: 100%; height: auto; min-height: 220px; }
+.marine-page .tide-chart text { fill: #526d82; font-size: 12px; }
+.marine-page .grid-line { stroke: #dbe7eb; stroke-width: 1; }
+.marine-page .axis { stroke: #78909c; }
+.marine-page .tide-area { fill: #cffafe; opacity: .8; }
+.marine-page .tide-line { fill: none; stroke: #0e7490; stroke-width: 4; }
+.marine-page .tide-events { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.marine-page .tide-event { padding: 15px; border: 1px solid #bfd0d9; display: flex; flex-direction: column; gap: 5px; }
+.marine-page .tide-event.high { border-top: 5px solid #0e7490; }
+.marine-page .tide-event.low { border-top: 5px solid #64748b; }
+.marine-page .tide-event strong { font-size: 1.5rem; }
+.marine-page .empty { color: #526d82; font-style: italic; }
+.marine-page footer { text-align: center; color: #526d82; font-size: .86rem; padding-top: 16px; }
+@media (max-width: 850px) { .marine-page .hero { align-items: stretch; flex-direction: column; } .marine-page .controls { min-width: 0; } .marine-page .current-grid { grid-template-columns: 1fr 1fr; } .marine-page .current-card { grid-column: 1 / -1; } .marine-page .daily-grid { grid-template-columns: repeat(2, 1fr); } .marine-page .tide-events { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .marine-page { width: min(100% - 16px, 1180px); padding-top: 8px; } .marine-page .hero, .marine-page section { padding: 18px; } .marine-page .current-grid { grid-template-columns: 1fr; } .marine-page .current-card { grid-column: auto; } .marine-page .daily-grid, .marine-page .tide-events { grid-template-columns: 1fr; } .marine-page .section-heading { align-items: start; flex-direction: column; } }
