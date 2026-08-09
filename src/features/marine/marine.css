@@ -15,3 +15,24 @@
 .marine-page .hour small, .marine-page .day small, .marine-page .metric small, .marine-page .ramp-day small { color: #526d82; } .marine-page .empty { color: #526d82; font-style: italic; } .marine-page footer { text-align: center; color: #526d82; font-size: .86rem; padding-top: 16px; }
 @media (max-width: 900px) { .marine-page .hero { align-items: stretch; flex-direction: column; } .marine-page .controls { min-width: 0; } .marine-page .current-grid { grid-template-columns: 1fr 1fr; } .marine-page .current-card { grid-column: 1 / -1; } .marine-page .daily-grid, .marine-page .ramp-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .marine-page { width: min(100% - 16px, 1180px); padding-top: 8px; } .marine-page .hero, .marine-page section { padding: 18px; } .marine-page .current-grid { grid-template-columns: 1fr; } .marine-page .current-card { grid-column: auto; } .marine-page .daily-grid, .marine-page .ramp-grid { grid-template-columns: 1fr; } .marine-page .section-heading { align-items: start; flex-direction: column; } }
+.marine-page .tide-calendar-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-top: 24px; }
+.marine-page .tide-calendar-heading h3 { margin: 0 0 4px; }
+.marine-page .tide-calendar-heading .forecast-note { margin: 0; }
+.marine-page .tide-legend { display: flex; flex-wrap: wrap; gap: 12px; flex: 0 0 auto; font-size: .78rem; font-weight: 800; }
+.marine-page .tide-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.marine-page .tide-legend i { width: 22px; height: 10px; display: inline-block; }
+.marine-page .legend-high { background: #15803d; }
+.marine-page .legend-low { background: #b91c1c; }
+.marine-page .tide-calendar-scroll { margin-top: 14px; overflow-x: auto; padding-bottom: 5px; }
+.marine-page .tide-calendar { min-width: 980px; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; }
+.marine-page .tide-calendar-day { min-width: 0; min-height: 166px; border: 1px solid #bfd0d9; padding: 10px; background: #fff; }
+.marine-page .tide-calendar-day > strong { display: block; margin-bottom: 9px; font-size: .9rem; }
+.marine-page .tide-day-track { position: relative; height: 38px; overflow: hidden; border: 1px solid #9fb5c0; background-color: #f8fafc; background-image: linear-gradient(to right, transparent calc(25% - 1px), #cbd5e1 calc(25% - 1px), #cbd5e1 25%, transparent 25%, transparent calc(50% - 1px), #cbd5e1 calc(50% - 1px), #cbd5e1 50%, transparent 50%, transparent calc(75% - 1px), #cbd5e1 calc(75% - 1px), #cbd5e1 75%, transparent 75%); }
+.marine-page .tide-band { position: absolute; inset-block: 0; }
+.marine-page .tide-marker { position: absolute; z-index: 2; top: 0; bottom: 0; width: 2px; transform: translateX(-1px); background: #fff; box-shadow: 0 0 0 1px rgba(15, 23, 42, .55); }
+.marine-page .tide-time-axis { display: flex; justify-content: space-between; color: #64748b; font-size: .58rem; margin-top: 3px; }
+.marine-page .tide-events { display: grid; gap: 3px; margin-top: 8px; font-size: .67rem; font-weight: 750; }
+.marine-page .tide-events span { white-space: nowrap; }
+.marine-page .event-high { color: #166534; }
+.marine-page .event-low { color: #991b1b; }
+@media (max-width: 700px) { .marine-page .tide-calendar-heading { align-items: start; flex-direction: column; gap: 10px; } }
