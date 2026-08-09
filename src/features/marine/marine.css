@@ -45,3 +45,25 @@
 .marine-page .tide-extreme-low circle { fill: #b91c1c; }
 .marine-page .tide-extreme-low text { fill: #991b1b; }
 @media (max-width: 700px) { .marine-page .tide-calendar-heading { align-items: start; flex-direction: column; gap: 10px; } }
+.marine-page .today-overview { border: 2px solid #0f3d56; }
+.marine-page .access-legend { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px 14px; font-size: .75rem; font-weight: 800; }
+.marine-page .access-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.marine-page .access-legend i { display: inline-block; width: 18px; height: 9px; }
+.marine-page .access-green { background: #15803d; }
+.marine-page .access-yellow { background: #d9a500; }
+.marine-page .access-red { background: #b91c1c; }
+.marine-page .today-weather-strip { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid #bfd0d9; margin-top: 16px; }
+.marine-page .today-weather-strip article { min-width: 0; display: grid; grid-template-columns: auto auto 1fr; align-items: center; gap: 2px 8px; padding: 10px 12px; border-right: 1px solid #bfd0d9; }
+.marine-page .today-weather-strip article:last-child { border-right: 0; }
+.marine-page .today-weather-strip strong { grid-column: 1 / -1; font-size: .78rem; color: #526d82; }
+.marine-page .today-weather-strip .today-weather-icon { grid-row: span 3; font-size: 1.65rem; }
+.marine-page .today-weather-strip b { font-size: 1rem; }
+.marine-page .today-weather-strip small { color: #526d82; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.marine-page .today-access-chart { margin-top: 16px; }
+.marine-page .today-access-track { position: relative; height: 28px; overflow: visible; border: 1px solid #0f3d56; background: #e2e8f0; }
+.marine-page .today-access-track > span { position: absolute; inset-block: 0; }
+.marine-page .today-tide-marker { position: absolute; z-index: 2; top: -5px; width: 3px; height: 36px; transform: translateX(-1px); background: #fff; border: 1px solid #0f172a; }
+.marine-page .today-tide-marker-high { box-shadow: 0 0 0 2px #15803d; }
+.marine-page .today-tide-marker-low { box-shadow: 0 0 0 2px #b91c1c; }
+.marine-page .today-tide-events { display: flex; flex-wrap: wrap; gap: 7px 16px; margin-top: 8px; font-size: .78rem; font-weight: 800; }
+@media (max-width: 700px) { .marine-page .today-overview .section-heading { align-items: start; flex-direction: column; } .marine-page .access-legend { justify-content: flex-start; } .marine-page .today-weather-strip { grid-template-columns: repeat(2, 1fr); } .marine-page .today-weather-strip article:nth-child(2) { border-right: 0; } .marine-page .today-weather-strip article:nth-child(-n+2) { border-bottom: 1px solid #bfd0d9; } }

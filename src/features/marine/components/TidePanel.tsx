@@ -61,9 +61,9 @@ function markerStyle(event: TidePoint, timezone: string): CSSProperties {
 }
 
 export function TidePanel({ forecast, timezone }: { forecast: TideForecast; timezone: string }) {
-  const now = Date.now();
-  const futureEvents = forecast.events.filter((event) => Date.parse(event.time) >= now);
-  const dates = [...new Set(futureEvents.map((event) => localDateKey(event.time, timezone)))].slice(0, 14);
+  const today = localDateKey(new Date().toISOString(), timezone);
+  const calendarEvents = forecast.events.filter((event) => localDateKey(event.time, timezone) >= today);
+  const dates = [...new Set(calendarEvents.map((event) => localDateKey(event.time, timezone)))].slice(0, 14);
 
   return (
     <section aria-labelledby="tides-heading">
@@ -88,7 +88,7 @@ export function TidePanel({ forecast, timezone }: { forecast: TideForecast; time
         <div className="tide-calendar-scroll">
           <div className="tide-calendar">
             {dates.map((date) => {
-              const events = futureEvents.filter((event) => localDateKey(event.time, timezone) === date && (event.type === "high" || event.type === "low"));
+              const events = calendarEvents.filter((event) => localDateKey(event.time, timezone) === date && (event.type === "high" || event.type === "low"));
               const displayDate = new Intl.DateTimeFormat("en-CA", {
                 weekday: "short",
                 month: "short",
@@ -104,7 +104,7 @@ export function TidePanel({ forecast, timezone }: { forecast: TideForecast; time
                       <div
                         className={`tide-band tide-band-${event.type}`}
                         key={`${event.time}-${event.type}`}
-                        style={bandStyle(event, futureEvents, timezone)}
+                        style={bandStyle(event, calendarEvents, timezone)}
                         title={`${event.type === "high" ? "High" : "Low"} tide: ${eventTime(event, timezone)} · ${event.height.toFixed(2)} m`}
                       />
                     ))}

@@ -7,6 +7,7 @@ import type { TideForecast } from "./types/tides";
 import type { WeatherForecast } from "./types/weather";
 import { TidePanel } from "./components/TidePanel";
 import { WeatherPanel } from "./components/WeatherPanel";
+import { TodayOverview } from "./components/TodayOverview";
 
 export function MarinePage() {
   const [locationId, setLocationId] = useState("ladysmith");
@@ -41,6 +42,7 @@ export function MarinePage() {
       <div className="notice"><strong>Planning aid only.</strong> Days 8–14 are less certain and conditions will change. Confirm official forecasts, notices, and local conditions before leaving.</div>
       {loading && !weather && !tides && <div className="loading">Loading live marine conditions…</div>}
       {weatherError && <div className="error"><strong>Weather unavailable:</strong> {weatherError}</div>}
+      {(weather || tides) && <TodayOverview weather={weather} tides={tides} timezone={location.timezone}/>}
       {weather && <WeatherPanel forecast={weather}/>} 
       {tideError && <div className="error"><strong>Tides unavailable:</strong> {tideError}<br/><small>The federal API occasionally blocks browser requests or has station-specific gaps. See README.md for troubleshooting.</small></div>}
       {tides && <TidePanel forecast={tides} timezone={location.timezone}/>} 
