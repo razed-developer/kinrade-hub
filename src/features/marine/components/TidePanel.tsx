@@ -71,7 +71,7 @@ export function TidePanel({ forecast, timezone }: { forecast: TideForecast; time
         <div><p className="eyebrow">Official CHS predictions</p><h2 id="tides-heading">Tides</h2></div>
         <span className="updated">{forecast.station.name}</span>
       </div>
-      <TideChart points={forecast.points} timezone={timezone} />
+      <TideChart points={forecast.points} events={forecast.events} timezone={timezone} />
 
       <div className="tide-calendar-heading">
         <div>
