@@ -30,11 +30,12 @@ export function WeatherPanel({ forecast }: { forecast: WeatherForecast }) {
           </article>
         ))}
       </div>
-      <h3>Seven-day outlook</h3>
+      <h3>14-day outlook</h3>
+      <p className="forecast-note">Days 8–14 use the best available forecast, but are more likely to change.</p>
       <div className="daily-grid">
-        {forecast.daily.map((day) => (
-          <article className="day" key={day.date}>
-            <strong>{formatDay(day.date, forecast.timezone)}</strong>
+        {forecast.daily.map((day, index) => (
+          <article className={`day ${index >= 7 ? "lower-confidence" : ""}`} key={day.date}>
+            <div className="day-heading"><strong>{formatDay(day.date, forecast.timezone)}</strong>{index >= 7 && <span className="confidence-badge">Lower confidence</span>}</div>
             <span>{weatherIcon(day.weatherCode)} {weatherLabel(day.weatherCode)}</span>
             <b>{Math.round(day.temperatureMax)}° / {Math.round(day.temperatureMin)}°</b>
             <small>Rain {day.precipitationProbabilityMax}% · Gusts {Math.round(day.windGustsMax)} km/h</small>
