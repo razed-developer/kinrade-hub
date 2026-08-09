@@ -35,4 +35,13 @@
 .marine-page .tide-events span { white-space: nowrap; }
 .marine-page .event-high { color: #166534; }
 .marine-page .event-low { color: #991b1b; }
+.marine-page .tide-extreme line { stroke-width: 1; stroke-dasharray: 3 3; opacity: .65; }
+.marine-page .tide-extreme circle { stroke: #fff; stroke-width: 2; }
+.marine-page .tide-extreme text { font-size: 10px; font-weight: 800; paint-order: stroke; stroke: #fff; stroke-width: 3px; stroke-linejoin: round; }
+.marine-page .tide-extreme-high line, .marine-page .tide-extreme-high circle { stroke: #15803d; }
+.marine-page .tide-extreme-high circle { fill: #15803d; }
+.marine-page .tide-extreme-high text { fill: #166534; }
+.marine-page .tide-extreme-low line, .marine-page .tide-extreme-low circle { stroke: #b91c1c; }
+.marine-page .tide-extreme-low circle { fill: #b91c1c; }
+.marine-page .tide-extreme-low text { fill: #991b1b; }
 @media (max-width: 700px) { .marine-page .tide-calendar-heading { align-items: start; flex-direction: column; gap: 10px; } }
