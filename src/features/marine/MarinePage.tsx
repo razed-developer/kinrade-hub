@@ -9,7 +9,7 @@ import { TidePanel } from "./components/TidePanel";
 import { WeatherPanel } from "./components/WeatherPanel";
 
 export function MarinePage() {
-  const [locationId, setLocationId] = useState("nanaimo");
+  const [locationId, setLocationId] = useState("ladysmith");
   const [weather, setWeather] = useState<WeatherForecast | null>(null);
   const [tides, setTides] = useState<TideForecast | null>(null);
   const [weatherError, setWeatherError] = useState("");
@@ -35,10 +35,10 @@ export function MarinePage() {
   return (
     <main className="marine-page">
       <header className="hero">
-        <div><p className="eyebrow">Vancouver Island marine dashboard</p><h1>Weather & Tides</h1><p>Forecast conditions and Canadian Hydrographic Service tide predictions in one place.</p></div>
+        <div><p className="eyebrow">Vancouver Island marine dashboard</p><h1>14-Day Boat Outlook</h1><p>Weather, wind, and marina ramp access based on Canadian Hydrographic Service tide predictions.</p></div>
         <div className="controls"><label htmlFor="location">Location</label><select id="location" value={locationId} onChange={(event) => setLocationId(event.target.value)}>{locations.map((item) => <option value={item.id} key={item.id}>{item.name}</option>)}</select><button type="button" onClick={() => void load()} disabled={loading}>{loading ? "Refreshing…" : "Refresh data"}</button></div>
       </header>
-      <div className="notice"><strong>Planning aid only.</strong> Confirm official forecasts, notices, charts, and local conditions before navigation.</div>
+      <div className="notice"><strong>Planning aid only.</strong> Days 8–14 are less certain and conditions will change. Confirm official forecasts, notices, and local conditions before leaving.</div>
       {loading && !weather && !tides && <div className="loading">Loading live marine conditions…</div>}
       {weatherError && <div className="error"><strong>Weather unavailable:</strong> {weatherError}</div>}
       {weather && <WeatherPanel forecast={weather}/>} 
