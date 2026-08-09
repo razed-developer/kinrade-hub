@@ -3,13 +3,14 @@ import { formatTime } from "../utils/format";
 
 interface Props {
   points: TidePoint[];
+  events?: TidePoint[];
   timezone: string;
 }
 
 const HOURS_TO_SHOW = 24;
 const HOUR_IN_MS = 60 * 60 * 1000;
 
-export function TideChart({ points, timezone }: Props) {
+export function TideChart({ points, events = [], timezone }: Props) {
   const now = Date.now();
   const endTime = now + HOURS_TO_SHOW * HOUR_IN_MS;
 
@@ -22,6 +23,13 @@ export function TideChart({ points, timezone }: Props) {
         time >= now &&
         time <= endTime
       );
+    })
+    .sort((a, b) => Date.parse(a.time) - Date.parse(b.time));
+
+  const extrema = events
+    .filter((event) => {
+      const time = Date.parse(event.time);
+      return Number.isFinite(time) && time >= now && time <= endTime;
     })
     .sort((a, b) => Date.parse(a.time) - Date.parse(b.time));
 
@@ -129,6 +137,26 @@ export function TideChart({ points, timezone }: Props) {
 
         <path d={area} className="tide-area" />
         <path d={path} className="tide-line" />
+
+        {extrema.map((event) => {
+          const eventX = x(Date.parse(event.time));
+          const eventY = y(event.height);
+          const label = `${event.type === "high" ? "High" : "Low"} ${formatTime(event.time, timezone)} · ${event.height.toFixed(2)} m`;
+
+          return (
+            <g key={`${event.type}-${event.time}`} className={`tide-extreme tide-extreme-${event.type}`}>
+              <line x1={eventX} x2={eventX} y1={eventY} y2={height - padY} />
+              <circle cx={eventX} cy={eventY} r="5" />
+              <text
+                x={eventX}
+                y={event.type === "high" ? eventY - 10 : eventY + 18}
+                textAnchor="middle"
+              >
+                {label}
+              </text>
+            </g>
+          );
+        })}
 
         {timeTicks.map((tick) => (
           <text
